@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Книги
+{% endblock %}
+
+
+{% block nav %}
+Книги
+{% endblock %}
+
+{% block content %}
+{% for i in book %}
+<div class="infoin"><br>
+    <div class="forgrid"><div class="minf"><br>
+        <img src="{{ i.img.url }}" width="200px">
+        <h3>Книга:{{ i.title }}</h3>
+        <p>Автор:{{ i.author }}</p><br>
+        {% if i.book_url.url != None %}
+        <a href="{{ i.book_url.url }}" class="button_click_url" style="width: 90%; margin-left: 5%; margin-right: 5%;">Читать онлайн</a><br>
+            {% endif %}
+            <br>
+        <br>
+        <a href="{{ i.url_lit }}" class="button_click_url"><b>Купить на Литрес</b></a>
+    </div>
+        <div class="descinf">
+            <h2 align="center">Описание</h2>
+            <p align="left" class="desc">{{ i.description }}</p><br>
+        </div>
+        
+       
+        
+    </div>
+   
+</div>
+
+{% endfor %}
+{% endblock %}

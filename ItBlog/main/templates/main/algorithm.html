@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Алгоритмы
+{% endblock %}
+
+{% block nav %}
+Алгоритмы
+{% endblock %}
+
+{% block content %}
+
+{% for i in algorithm %}
+
+<div class="infoin">
+<h1 class="title">{{ i.title }}</h1>
+<p class="desc" style="font-weight: 300;">
+    {{ i.description }}
+</p>
+</div><br>
+
+{% endfor %}
+{% endblock %}

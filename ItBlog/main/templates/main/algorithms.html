@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Алгоритмы
+{% endblock %}
+{% block nav %}
+Алгоритмы
+{% endblock %}
+{% block content %}
+
+
+
+{% for i in algorithms %}
+
+<div class="infoblock">
+    <img  src="{{ i.alg_url.url }}" class="postim" >
+<p class="title">{{ i.title }}</p>
+<a href="/algorithm/{{ i.pk }}" class="button_click_url">Подробнее</a>
+</div><br>
+{% endfor %}
+{% endblock %}

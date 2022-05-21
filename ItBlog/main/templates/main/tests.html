@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Тесты
+{% endblock %}
+
+{% block nav %}
+Тесты
+{% endblock %}
+
+{% block content %}
+
+{% for i in tests %}
+
+<div class="infoblock">
+<img class="postim" src="{{ i.img_url.url }}" >
+<p class="title">{{ i.title }}</p>
+<p class="button_click" ><a href="/test/{{ i.pk }}" class="button_click_url" >Пройти_тест</a></p>
+</div><br>
+{% endfor %}
+{% endblock %}

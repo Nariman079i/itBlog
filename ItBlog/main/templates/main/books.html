@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Книги
+{% endblock %}
+
+
+{% block nav %}
+Книги
+{% endblock %}
+{% block content %}
+
+{% for i in books %}
+{% if i.isPublished == True %}
+
+<div class="infoin">
+    <div class="forgrid">
+<div class="minf">
+    <div style="width:200px; height:200px;"><img src="{{ i.img.url }}"  height="100%" ></div><br>
+    <p class="title" >{{ i.title }}</p><br>
+    <a href="/book/{{ i.pk }}" class="button_click_url" style="width: 90%; margin-left: 5%; margin-right: 5%;">Подробнее</a></div>
+<div class="descinf"><p style="overflow:hidden; width: 100%;height: 200px; font-weight: 600; font-size: 20px;  " class="desc">{{ i.description }}</p></div>
+    </div>
+</div><br>
+
+{% endif %}
+
+{% endfor %}
+{% endblock %}

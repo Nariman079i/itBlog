@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Python
+{% endblock %}
+
+{% block nav %}
+Python
+{% endblock %}
+{% block content %}
+
+{% for i in lesson %}
+{% if i.isPublished == True %}
+<div class="infoin">
+<p class="title">{{ i.title }}</p><br>
+   <video autoplay="" controls="controls" class="video">
+ <source src="{{ i.video_url.url }}">
+</video><br>
+<p class="desc">{{ i.description }}</p>
+<br>
+{% if test_id != None %}
+<a href="/test/{{ i.test_id.pk }}" class="button_click_url">Перейти к тесту</a>
+</div><br>
+
+{% endif %}
+</div><br>
+{% endif %}
+{% endfor %}
+{% endblock %}

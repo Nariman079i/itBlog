@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Тесты
+{% endblock %}
+
+{% block nav %}
+Тесты
+{% endblock %}
+
+{% block content %}
+
+{% for i in test %}
+
+<div class="infoin">
+<h2 class="title">{{ i.title }}</h2>
+
+<p class="desc">{{ i.description }}</p>
+<a class="button_click_url" href="#">Ответить</a>
+</div><br>
+
+
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Python
+{% endblock %}
+
+{% block nav %}
+Python
+{% endblock %}
+{% block content %}
+
+{% for i in lessons %}
+{% if i.isPublished == True %}
+<div class="infoblock">
+    <img class="postim" src="{{ i.ico_url.url }}" >
+<p class="title">{{ i.title }}</p>
+{% if i.isOpen == True %}
+
+<p class="button_click" ><a href="/python/{{ i.pk }}/" class="button_click_url" >Изучить</a></p>
+{% else %}
+<p class="button_click" ><a  class="button_click_url" style="background-color:rgb(180, 180, 180) ; color: gray;" >Закрыто</a></p>
+{% endif %}
+</div><br>
+{% endif %}
+
+{% endfor %}
+{% endblock %}
