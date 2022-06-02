@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+<form action="{% url 'add_page' %}">
+    {% csrf_token %}
+    {{ forms.as_p }}
+</form>

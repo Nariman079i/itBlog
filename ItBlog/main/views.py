@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import AddPageForm
 from .models import *
 
 def main(requests):
@@ -9,6 +10,9 @@ def main(requests):
     url_site = 'main/base.html'
     return render(requests , url_site , context=context)
 
+def addpage(requests):
+    forms = AddPageForm()
+    return render(requests , 'main/addpage.html' , context={'form' : forms})
 
 # python models
 def show_pythons(requests):
