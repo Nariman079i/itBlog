@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Добавление поста
+{% endblock %}
+{% block nav %}
+ADd
+{% endblock %}
+
+{% block content %}
+<form action="{% url 'add' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Yfo</button>
+</form>
+{% endblock %}

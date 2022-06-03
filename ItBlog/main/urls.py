@@ -5,7 +5,7 @@ from django.urls import path
 from .views import *
 urlpatterns = [
     path('' , main),
-    path('addpage' , addpage , name='add_page'),
+    path('add/' , Addpage , name='add'),
     path('books/', show_books),
     path('book/<int:book_id>/', show_book),
     path('pythons/' , show_pythons),

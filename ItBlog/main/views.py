@@ -10,9 +10,16 @@ def main(requests):
     url_site = 'main/base.html'
     return render(requests , url_site , context=context)
 
-def addpage(requests):
-    forms = AddPageForm()
-    return render(requests , 'main/addpage.html' , context={'form' : forms})
+def Addpage(requests):
+
+    if requests.method == "POST":
+        form = AddPageForm(requests.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+    else:
+        form = AddPageForm()
+
+    return render(requests , 'main/add.html' , context={'form' : form})
 
 # python models
 def show_pythons(requests):
